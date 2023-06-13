@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-/*
+
         stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
@@ -57,6 +57,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonar-pro') {
                     sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
+		   -Dsonar.organization=k8scicdjenkins \
                    -Dsonar.projectName=vprofile-repo \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
@@ -71,7 +72,7 @@ pipeline {
                 }
             }
         }
-*/
+
         stage('Build App Image') {
           steps {
             script {
